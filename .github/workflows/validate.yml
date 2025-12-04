@@ -1,0 +1,32 @@
+name: âœ… Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Validate project structure
+      run: |
+        echo "í´ Validating AML Transaction Monitoring structure..."
+        test -f README.md && echo "âœ… README.md exists" || exit 1
+        test -f requirements.txt && echo "âœ… requirements.txt exists" || exit 1
+        test -f LICENSE && echo "âœ… LICENSE exists" || exit 1
+        test -d src && echo "âœ… src/ directory exists" || exit 1
+        test -d docs && echo "âœ… docs/ directory exists" || exit 1
+        echo ""
+        echo "âœ… All validations passed!"
+    
+    - name: Count source files
+      run: |
+        echo "í³Š Project Statistics:"
+        PY_COUNT=$(find src -name "*.py" 2>/dev/null | wc -l)
+        echo "Python files: $PY_COUNT"
+        [ $PY_COUNT -gt 3 ] && echo "âœ… Source files present" || exit 1
