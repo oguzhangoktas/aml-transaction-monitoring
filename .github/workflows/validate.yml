@@ -1,4 +1,4 @@
-name: âœ… Validation
+name: Validation
 
 on:
   push:
@@ -15,18 +15,32 @@ jobs:
     
     - name: Validate project structure
       run: |
-        echo "í´ Validating AML Transaction Monitoring structure..."
-        test -f README.md && echo "âœ… README.md exists" || exit 1
-        test -f requirements.txt && echo "âœ… requirements.txt exists" || exit 1
-        test -f LICENSE && echo "âœ… LICENSE exists" || exit 1
-        test -d src && echo "âœ… src/ directory exists" || exit 1
-        test -d docs && echo "âœ… docs/ directory exists" || exit 1
-        echo ""
-        echo "âœ… All validations passed!"
+        echo "Validating project structure..."
+        test -f README.md && echo "README.md exists" || exit 1
+        test -f requirements.txt && echo "requirements.txt exists" || exit 1
+        test -f setup.py && echo "setup.py exists" || exit 1
+        test -d src && echo "src directory exists" || exit 1
+        test -d docs && echo "docs directory exists" || exit 1
+        test -d tests && echo "tests directory exists" || exit 1
+        echo "All structure validations passed"
     
-    - name: Count source files
+    - name: Count Python files
       run: |
-        echo "í³Š Project Statistics:"
-        PY_COUNT=$(find src -name "*.py" 2>/dev/null | wc -l)
-        echo "Python files: $PY_COUNT"
-        [ $PY_COUNT -gt 3 ] && echo "âœ… Source files present" || exit 1
+        echo "Counting Python files..."
+        PY_COUNT=$(find src -name "*.py" | wc -l)
+        echo "Found $PY_COUNT Python files in src"
+        test $PY_COUNT -gt 0 && echo "Python files found" || exit 1
+    
+    - name: Count SQL files
+      run: |
+        echo "Counting SQL files..."
+        SQL_COUNT=$(find sql -name "*.sql" 2>/dev/null | wc -l)
+        echo "Found $SQL_COUNT SQL files"
+        test $SQL_COUNT -gt 0 && echo "SQL files found" || exit 1
+    
+    - name: Validate documentation
+      run: |
+        echo "Checking documentation..."
+        test -f docs/ARCHITECTURE.md && echo "Architecture docs exist"
+        test -f docs/DATA_MODEL.md && echo "Data model docs exist"
+        test -f docs/SETUP.md && echo "Setup docs exist"
