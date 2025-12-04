@@ -1,0 +1,140 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+venv/
+ENV/
+env/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Spark
+derby.log
+metastore_db/
+spark-warehouse/
+*.log
+
+# Delta Lake
+_delta_log/
+_committed_*/
+_started_*/
+
+# Airflow
+airflow.db
+airflow.cfg
+logs/
+*.pid
+*.err
+*.out
+unittests.cfg
+
+# AWS
+.aws/
+*.pem
+*.key
+
+# Data files (keep sample data, ignore large datasets)
+data/raw/
+data/processed/
+data/enriched/
+data/curated/
+*.parquet
+*.csv
+*.json
+!data/sample/*.json
+
+# Checkpoints
+checkpoints/
+checkpoint/
+_checkpoint/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+*.tfvars.json
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+.hypothesis/
+
+# Documentation
+docs/_build/
+site/
+
+# Guide and Setup files (keep local only)
+*GUIDE*.md
+*SUMMARY*.md
+*COMPLETE*.md
+*OVERVIEW*.txt
+FILE_LIST.txt
+COMPLETE_FILE_LIST.txt
+REPOSITORY_OVERVIEW.txt
+FILES_DISTRIBUTION.md
+scripts/copy_files.sh
+scripts/create_repo_structure.sh
+docs/INTERVIEW_GUIDE.md
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Kafka data
+/kafka-data/
+
+# Docker volumes
+/postgres-data/
+/localstack-data/
+
+# IDE
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/

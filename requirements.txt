@@ -1,0 +1,53 @@
+# AML Transaction Monitoring System - Python Dependencies
+
+# Core Data Processing
+pyspark==3.5.0
+delta-spark==3.0.0
+pandas==2.1.4
+numpy==1.26.2
+
+# AWS Integration
+boto3==1.34.14
+awscli==1.32.14
+awsglue==4.0.0
+
+# Kafka
+kafka-python==2.0.2
+confluent-kafka==2.3.0
+
+# Airflow
+apache-airflow==2.8.0
+apache-airflow-providers-amazon==8.16.0
+apache-airflow-providers-apache-spark==4.6.0
+
+# Data Validation & Quality
+great-expectations==0.18.8
+pydantic==2.5.3
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+moto==5.0.0  # AWS mocking
+
+# Code Quality
+pylint==3.0.3
+black==23.12.1
+flake8==7.0.0
+mypy==1.8.0
+
+# Utilities
+python-dotenv==1.0.0
+pyyaml==6.0.1
+requests==2.31.0
+
+# Logging & Monitoring
+python-json-logger==2.0.7
+
+# Development
+ipython==8.19.0
+jupyter==1.0.0
+notebook==7.0.6
+
+# Documentation
+sphinx==7.2.6
